@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WebApi.Controllers;
+using EntityLayer.Concrete;
 
 namespace UnitTest.WebApiTest.User
 {
@@ -13,7 +14,7 @@ namespace UnitTest.WebApiTest.User
         [TestMethod]
         public void GetUser()
         {
-            //new UserController().GetUserList();
+            new UserController().GetUserList();
         }
 
         [TestMethod]
