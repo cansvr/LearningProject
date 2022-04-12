@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.User
+@{
+    Layout = null;
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<br />
+@using (Html.BeginForm("AddUser", "User", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextBoxFor(x => x.USER_NAME)
+    @Html.ValidationMessageFor(x => x.USER_NAME)
+    <br /> <br />
+    @Html.Label("Kullanıcı Soyadı")
+    @Html.TextBoxFor(x => x.USER_SURNAME)
+    @Html.ValidationMessageFor(x=>x.USER_SURNAME)
+    <br /> <br />
+    @Html.Label("Kullanıcı Mail Adresi")
+    @Html.TextBoxFor(x => x.USER_MAIL)
+    @Html.ValidationMessageFor(x=>x.USER_MAIL)
+    <br /> <br />
+    <button>Kaydet</button>
+</div>
+}
