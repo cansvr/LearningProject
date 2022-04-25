@@ -13,5 +13,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<User> Users { get; set; }
 
         public DbSet<Writer> Writers { get; set; }
+
+        public DbSet<UserRoles> UserRoles { get; set; }
     }
 }

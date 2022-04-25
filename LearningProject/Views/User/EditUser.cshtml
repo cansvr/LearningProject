@@ -1,13 +1,17 @@
 ﻿@model EntityLayer.Concrete.User
 @{
-    Layout = null;
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
 <br />
-@using (Html.BeginForm("AddUser", "User", FormMethod.Post))
+<h2>Kullanıcı Düzenleme</h2>
+<br />
+@using (Html.BeginForm("EditUser", "User", FormMethod.Post))
 {
     <div class="form-group">
+        @Html.Label("Kullanıcı Kodu")
+        @Html.TextBoxFor(x => x.USER_CODE, new { @class = "form-control" })
+        <br />
         @Html.Label("Kullanıcı Adı")
         @Html.TextBoxFor(x => x.USER_NAME, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.USER_NAME)
@@ -36,5 +40,8 @@
         @Html.TextBoxFor(x => x.USER_ABOUT, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.USER_ABOUT)
         <br />
-        <button class="btn btn-info">Kullanıcıyı Ekle</button>
+        <button class="btn btn-info">Değişiklikleri Uygula</button>
     </div>
+}
+
+

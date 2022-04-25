@@ -14,10 +14,12 @@ namespace LearningProject.Controllers
     public class UserController : Controller
     {
         UserManager um = new UserManager(new EfUserDal());
+        UserValidator userValidator = new UserValidator();
 
         public ActionResult Index()
         {
-            return View();
+            var userValues = um.GetList();
+            return View(userValues);
         }
 
         public ActionResult GetUserList()
@@ -35,12 +37,37 @@ namespace LearningProject.Controllers
         [HttpPost]
         public ActionResult AddUser(User p)
         {
-            UserValidator userValidator = new UserValidator();
             ValidationResult results = userValidator.Validate(p);
             if (results.IsValid)
             {
                 um.UserAdd(p);
                 return RedirectToAction("GetUserList");
+            }
+            else
+            {
+                foreach (var item in results.Errors)
+                {
+                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
+                }
+            }
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult EditUser(int id)
+        {
+            var writerValue = um.GetByID(id);
+            return View(writerValue);
+        }
+
+        [HttpPost]
+        public ActionResult EditUser(User p)
+        {
+            ValidationResult results = userValidator.Validate(p);
+            if (results.IsValid)
+            {
+                um.UserUpdate(p);
+                return RedirectToAction("Index");
             }
             else
             {

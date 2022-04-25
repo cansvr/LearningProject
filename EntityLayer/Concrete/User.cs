@@ -16,6 +16,16 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public string USER_SURNAME { get; set; }
         [StringLength(100)]
+        public string USER_IMAGE { get; set; }
+        [StringLength(100)]
+        public string USER_ABOUT { get; set; }
+        [StringLength(100)]
+        public string USER_PASSWORD { get; set; }
+        [StringLength(100)]
         public string USER_MAIL { get; set; }
+        [StringLength(100)]
+        public string USER_TITLE { get; set; }
+
+        public ICollection<UserRoles> UserRoles { get; set; }
     }
 }
