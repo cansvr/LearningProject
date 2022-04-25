@@ -51,12 +51,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IWriterDal.cs" />
     <Compile Include="Abstract\IUserDal.cs" />
     <Compile Include="Concrete\Context.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Concrete\Repositories\GenericRepository.cs" />
     <Compile Include="Concrete\Repositories\UserRepository.cs" />
+    <Compile Include="EntityFramework\EfWriterDal.cs" />
     <Compile Include="EntityFramework\EfUserDal.cs" />
+    <Compile Include="Migrations\202204181119049_mig1.cs" />
+    <Compile Include="Migrations\202204181119049_mig1.designer.cs">
+      <DependentUpon>202204181119049_mig1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204181125186_mig2.cs" />
+    <Compile Include="Migrations\202204181125186_mig2.designer.cs">
+      <DependentUpon>202204181125186_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204191424022_mig3.cs" />
+    <Compile Include="Migrations\202204191424022_mig3.designer.cs">
+      <DependentUpon>202204191424022_mig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204191452291_mig4.cs" />
+    <Compile Include="Migrations\202204191452291_mig4.designer.cs">
+      <DependentUpon>202204191452291_mig4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204251252237_MIG5.cs" />
+    <Compile Include="Migrations\202204251252237_MIG5.designer.cs">
+      <DependentUpon>202204251252237_MIG5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -64,7 +86,23 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202204181119049_mig1.resx">
+      <DependentUpon>202204181119049_mig1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204181125186_mig2.resx">
+      <DependentUpon>202204181125186_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204191424022_mig3.resx">
+      <DependentUpon>202204191424022_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204191452291_mig4.resx">
+      <DependentUpon>202204191452291_mig4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204251252237_MIG5.resx">
+      <DependentUpon>202204251252237_MIG5.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{ffbbc930-a36c-4f6e-85af-509b8e97b7b4}</Project>

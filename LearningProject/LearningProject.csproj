@@ -135,6 +135,7 @@
     <Compile Include="Controllers\AdminUserController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2272,6 +2273,9 @@
     <Content Include="Views\AdminUser\Index.cshtml" />
     <Content Include="Views\AdminUser\AddUser.cshtml" />
     <Content Include="Views\AdminUser\EditUser.cshtml" />
+    <Content Include="Views\Writer\Index.cshtml" />
+    <Content Include="Views\Writer\AddWriter.cshtml" />
+    <Content Include="Views\Writer\EditWriter.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

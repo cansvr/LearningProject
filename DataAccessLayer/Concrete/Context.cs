@@ -11,5 +11,7 @@ namespace DataAccessLayer.Concrete
     public class Context: DbContext
     {
         public DbSet<User> Users { get; set; }
+
+        public DbSet<Writer> Writers { get; set; }
     }
 }
