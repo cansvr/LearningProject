@@ -70,7 +70,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest.cs" />
+    <Compile Include="RoleUnitTest.cs" />
+    <Compile Include="UserUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -89,6 +90,10 @@
     <ProjectReference Include="..\EntityLayer\EntityLayer.csproj">
       <Project>{ffbbc930-a36c-4f6e-85af-509b8e97b7b4}</Project>
       <Name>EntityLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LearningProject\LearningProject.csproj">
+      <Project>{3b78e860-ae22-4ca7-a31a-a5b310fd1cd3}</Project>
+      <Name>LearningProject</Name>
     </ProjectReference>
     <ProjectReference Include="..\WebApi\WebApi.csproj">
       <Project>{F8BF7D17-3477-49E0-835A-581DF6C8A513}</Project>

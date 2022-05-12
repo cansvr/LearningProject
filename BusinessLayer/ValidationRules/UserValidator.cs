@@ -13,8 +13,6 @@ namespace BusinessLayer.ValidationRules
         public UserValidator()
         {
             RuleFor(x => x.USER_NAME).NotEmpty().WithMessage("Kullanıcı Adını boş geçemezsiniz!");
-            RuleFor(x => x.USER_SURNAME).NotEmpty().WithMessage("Kullanıcı Soyadını boş geçemezsiniz!");
-            RuleFor(x => x.USER_MAIL).NotEmpty().WithMessage("Kullanıcı Mail adresini boş geçemezsiniz!");
         }
     }
 }

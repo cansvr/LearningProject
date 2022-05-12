@@ -54,5 +54,26 @@ namespace LearningProject.Controllers
             }
             return View();
         }
+
+        public ActionResult DeleteRole(int id)
+        {
+            var roleValue = rm.GetByID(id);
+            rm.UserRoleDelete(roleValue);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditRole(int id)
+        {
+            var roleValue = rm.GetByID(id);
+            return View(roleValue);
+        }
+
+        [HttpPost]
+        public ActionResult EditRole(UserRoles p)
+        {
+            rm.UserRoleUpdate(p);
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -10,7 +10,7 @@ using WebApi.Controllers;
 namespace UnitTestWebApi
 {
     [TestClass]
-    public class UnitTest
+    public class UserUnitTest
     {
         [TestMethod]
         public void GetUser()
@@ -25,7 +25,7 @@ namespace UnitTestWebApi
         {
             var result = "";
             User user = new User();
-            user = new User() { USER_NAME = "Can", USER_SURNAME = "Sever", USER_MAIL = "can.sever@bilgiyon.com.tr" };
+            user = new User() { USER_NAME = "test", USER_SURNAME = "test2", USER_MAIL = "can.sever@bilgiyon.com.tr", ROLE_CODE = 1};
             result = new UserController().AddUser(user);
             Assert.AreEqual(user.USER_NAME +" Kullanıcısı için Ekleme Başarılı!", result);
         }
@@ -35,7 +35,7 @@ namespace UnitTestWebApi
         {
             string result = "";
             User user = new User();
-            user = new User() { USER_CODE = 1, USER_NAME = "Can", USER_SURNAME = "Sever", USER_MAIL = "can.sever@bilgiyon.com.tr" };
+            user = new User() { USER_CODE = 1, USER_NAME = "Can", USER_SURNAME = "Sever", USER_MAIL = "can.sever@bilgiyon.com.tr", ROLE_CODE = 1 };
             result = new UserController().UpdateUser(user);
             Assert.AreEqual(user.USER_NAME + " Kullanıcısı için Güncelleme Başarılı!", result);
         }

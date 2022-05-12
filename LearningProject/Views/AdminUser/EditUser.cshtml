@@ -7,17 +7,20 @@
 <h2>Kullanıcı Güncelleme Sayfası</h2>
 @using (Html.BeginForm("EditUser", "AdminUser", FormMethod.Post))
 {
-    <div class="form-group">
-        @Html.Label("Kullanıcı Kodu")
-        @Html.TextAreaFor(x => x.USER_CODE, new { @class = "form-control" })       
-        @Html.Label("Kullanıcı Adı")
-        @Html.TextAreaFor(x => x.USER_NAME, new { @class = "form-control" })        
-        @Html.Label("Kullanıcı Soyadı")
-        @Html.TextAreaFor(x => x.USER_SURNAME, new { @class = "form-control" })      
-        @Html.Label("Kullanıcı Mail Adresi")
-        @Html.TextAreaFor(x => x.USER_MAIL, new { @class = "form-control" })
-        <br />
-        <button class="btn btn-success">Güncelle</button>
-    </div>
+<div class="form-group">
+    @Html.Label("Kullanıcı Kodu")
+    @Html.TextAreaFor(x => x.USER_CODE, new { @class = "form-control", @readonly = "readonly" })
+    @Html.Label("Kullanıcı Adı")
+    @Html.TextAreaFor(x => x.USER_NAME, new { @class = "form-control" })
+    @Html.Label("Kullanıcı Soyadı")
+    @Html.TextAreaFor(x => x.USER_SURNAME, new { @class = "form-control" })
+    @Html.Label("Kullanıcı Mail Adresi")
+    @Html.TextAreaFor(x => x.USER_MAIL, new { @class = "form-control" })
+    @*@Html.Label("Rol Adı")
+    @Html.TextAreaFor(x => x.UserRoles.ROLE_NAME, new { @class = "form-control", @readonly = "readonly" })*@
+    @*@Html.DropDownListFor(x => x.ROLE_CODE, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })*@
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
 }
 

@@ -15,8 +15,7 @@ namespace EntityLayer.Concrete
         [StringLength(100)]
         public string ROLE_NAME { get; set; }
 
-        public int USER_CODE { get; set; }
-        public virtual User User { get; set; }
+        public ICollection<User> Users { get; set; }
 
     }
 }

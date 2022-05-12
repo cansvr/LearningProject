@@ -36,5 +36,8 @@
         @Html.TextBoxFor(x => x.USER_ABOUT, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.USER_ABOUT)
         <br />
+        @*@Html.Label("Rol Adı")
+        @Html.DropDownListFor(x => x.ROLE_CODE, (List<SelectListItem>)ViewBag.vlc, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x)*@
         <button class="btn btn-info">Kullanıcıyı Ekle</button>
     </div>

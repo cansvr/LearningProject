@@ -4,27 +4,64 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h2>Index</h2>
-<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
-
-<br />
-<table class="table table-bordered">
-    <tr>
-        <th>Rol Kodu</th>
-        <th>Rol Adı</th>
-        <th>Kullanıcı Adı</th>
-    </tr>
-    @foreach (var item in Model)
-    {
-        <tr>
-            <td>@item.ROLE_CODE</td>
-            <td>@item.ROLE_NAME</td>
-            <td>@item.User.USER_NAME</td>
-        </tr>
-    }
-</table>
-
-<br />
-<a href="/Role/AddRole/" class="btn btn-info">Yeni Rol Oluşturma</a>
+<!DOCTYPE html>
+<html>
+<body class="hold-transition sidebar-mini">
+    <!-- /.navbar -->
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Kullanıcılar Sayfası</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card card-solid">
+            <div class="card-body pb-0">
+                <div class="row d-flex align-items-stretch">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                            <div class="card bg-light">
+                                <div class="card-body pt-0">
+                                    <div class="row">
+                                        <div class="col-7">
+                                            <h2 class="lead"><b>@item.ROLE_NAME</b></h2>
+                                            <p class="text-muted text-sm"><b>@item.ROLE_NAME</b> </p>
+                                            <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Bilgiyön Yazılım</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-5 text-center">
+                                            <img src="~/AdminLTE-3.0.4/dist/img/user1-128x128.jpg" alt="" class="img-circle img-fluid">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="text-right">
+                                        <a href="/Role/EditRole/@item.ROLE_CODE" class="btn btn-m btn-primary">
+                                            <i class="fas fa-user"></i> Rolü Düzenle
+                                        </a>
+                                        <a href="/Role/DeleteRole/@item.ROLE_CODE" class="btn btn-m bg-danger">
+                                            <i class="fas fa-comments"> Rolü Sil</i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <a href="/Role/AddRole/" class="btn btn-info">Yeni Rol Oluşturma</a>
+        <!-- /.card -->
+    </section>
+    <!-- /.content -->
+</body>
+</html>
 

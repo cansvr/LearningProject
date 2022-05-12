@@ -1,0 +1,21 @@
+﻿@model EntityLayer.Concrete.UserRoles
+@{
+    ViewBag.Title = "DeleteRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<h2>Rol Silme</h2>
+<br />
+@using (Html.BeginForm("DeleteRole", "Role", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Kullanıcı Kodu")
+        @Html.TextBoxFor(x => x.ROLE_CODE, new { @class = "form-control", @readonly = "readonly" })
+        <br />
+        @Html.Label("Kullanıcı Adı")
+        @Html.TextBoxFor(x => x.ROLE_NAME, new { @class = "form-control" })
+        @Html.ValidationMessageFor(x => x.ROLE_NAME)
+        <br />
+        <button class="btn btn-info">Değişiklikleri Uygula</button>
+    </div>
+}

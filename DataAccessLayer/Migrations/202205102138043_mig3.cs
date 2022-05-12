@@ -3,16 +3,16 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class MIG5 : DbMigration
+    public partial class mig3 : DbMigration
     {
         public override void Up()
         {
-            AddColumn("dbo.Writers", "WRITER_TITLE", c => c.String(maxLength: 100));
+            AlterColumn("dbo.Users", "USER_ABOUT", c => c.String(maxLength: 600));
         }
         
         public override void Down()
         {
-            DropColumn("dbo.Writers", "WRITER_TITLE");
+            AlterColumn("dbo.Users", "USER_ABOUT", c => c.String(maxLength: 300));
         }
     }
 }
